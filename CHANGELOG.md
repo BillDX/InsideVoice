@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.0 — 2026-09-13
+
+- **Renamed to Inside Voice** (was LocalWhisper). Models, vocabulary,
+  substitution rules, and settings move to the new locations automatically
+  on first launch (`~/Library/Application Support/Inside Voice/`,
+  defaults domain `com.thinkiac.InsideVoice`). The bundle identifier
+  changed, so macOS sees a new app: re-grant Microphone, Input Monitoring,
+  and Accessibility once (the Setup Assistant opens to walk you through it)
+  and re-enable Launch at Login. Delete the old LocalWhisper.app. The retro
+  themes print the new name; developer env overrides are now
+  `INSIDEVOICE_MODEL` / `INSIDEVOICE_PARAKEET_MODEL`.
+- Homebrew tap: `brew install --cask BillDX/tap/inside-voice`.
+- Public repo moved to github.com/BillDX/InsideVoice; old links redirect.
+
 ## 1.2.0 — 2026-09-13
 
 - First public download release: DMG and docs at

@@ -1,4 +1,4 @@
-# LocalWhisper User Guide
+# Inside Voice User Guide
 
 ## Core Function: 
 
@@ -25,7 +25,7 @@ Some details you'll discover anyway, made explicit:
 
 - A **quick tap does nothing** — presses shorter than about a third of a
   second are ignored, so using Right ⌥ as a normal modifier key stays safe.
-  The key still works as Option for other apps even while LocalWhisper
+  The key still works as Option for other apps even while Inside Voice
   watches it.
 - **Silence is trimmed** from both ends of your recording, and an all-silent
   clip is discarded without transcribing. Long pauses *inside* a dictation
@@ -153,12 +153,12 @@ field). Harmless to open anytime.
   Transcription* menu item, and vanishes on quit.
 - What *is* stored on disk: the speech model(s) you downloaded, your
   vocabulary and substitution text files, and your settings
-  (`~/Library/Application Support/LocalWhisper/`, plus standard macOS
+  (`~/Library/Application Support/Inside Voice/`, plus standard macOS
   preferences). No audio, no history, no logs.
 
 ## Troubleshooting
 
-**Hotkey only works when LocalWhisper is frontmost** — the classic. Input
+**Hotkey only works when Inside Voice is frontmost** — the classic. Input
 Monitoring isn't granted: menu → Permissions — action needed → Input
 Monitoring (or Setup Assistant…). The app picks the grant up within a few
 seconds; no relaunch needed.
@@ -196,17 +196,23 @@ Parakeet (or Auto with vocabulary off) if speed matters more than jargon.
 
 ## Updating
 
-For now, updates arrive as a new DMG: open it, drag LocalWhisper to
+For now, updates arrive as a new DMG: open it, drag Inside Voice to
 Applications, and click Replace. Everything important survives the swap —
 
 - your three permission grants (they're tied to the app's signing identity,
   not the individual build),
 - the downloaded models, your vocabulary and substitution lists, and all
-  settings (they live in `~/Library/Application Support/LocalWhisper/`,
+  settings (they live in `~/Library/Application Support/Inside Voice/`,
   outside the app).
 
-Quit the running copy first (menu → Quit LocalWhisper), replace, relaunch.
+Quit the running copy first (menu → Quit Inside Voice), replace, relaunch.
 If it was set to launch at login, that carries over too.
+
+**Coming from LocalWhisper (1.2.0 or earlier):** the 1.3.0 rename keeps your
+models, lists, and settings — they're moved to the new locations on first
+launch — but macOS treats the renamed app as new: re-grant the three
+permissions (the Setup Assistant opens to walk you through it), re-enable
+Launch at Login, and delete the old LocalWhisper.app.
 
 In-app automatic updates ("a new version is available…") are planned for
 the notarized public release.

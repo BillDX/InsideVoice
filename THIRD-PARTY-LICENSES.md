@@ -1,10 +1,10 @@
 # Third-Party Licenses
 
-LocalWhisper itself is dual-licensed `EUPL-1.2 OR GPL-3.0-or-later` (see
+Inside Voice itself is dual-licensed `EUPL-1.2 OR GPL-3.0-or-later` (see
 LICENSING.md). It builds on, vendors, or
 downloads the following third-party work.
 
-## Libraries (vendored into LocalWhisper.app/Contents/Frameworks)
+## Libraries (vendored into Inside Voice.app/Contents/Frameworks)
 
 ### whisper.cpp (libwhisper, libparakeet) — MIT License
 Copyright (c) 2023-2026 The ggml authors (Georgi Gerganov and contributors)
@@ -59,7 +59,7 @@ DEALINGS IN THE SOFTWARE.
 
 ## Trademarks
 
-Theme names and visuals in LocalWhisper are original, evoking general
+Theme names and visuals in Inside Voice are original, evoking general
 technology eras (CRT terminals, oscilloscopes, punch cards, 8-bit home
 computers, sci-fi film computers). No affiliation with or endorsement by
 any film studio, broadcaster, or computer manufacturer is implied.

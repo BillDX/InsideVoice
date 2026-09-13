@@ -1,4 +1,4 @@
-# Testing LocalWhisper (pre-release builds)
+# Testing Inside Voice (pre-release builds)
 
 Thanks for kicking the tires. What you're testing: **hold Right ⌥ anywhere,
 speak, release** — the transcript lands in whatever app has focus. Everything
@@ -18,7 +18,7 @@ are never logged.
 ## Install
 
 Grab the DMG from the
-[Releases page](https://github.com/BillDX/LocalWhisper/releases/latest) —
+[Releases page](https://github.com/BillDX/InsideVoice/releases/latest) —
 it's small; the speech model downloads on first launch.
 
 These builds are signed with a local certificate, **not** an Apple
@@ -29,16 +29,16 @@ by the app that downloads a file; `curl` doesn't apply it, so Gatekeeper
 never gets involved:
 
 ```bash
-curl -L -o ~/Downloads/LocalWhisper.dmg https://github.com/BillDX/LocalWhisper/releases/latest/download/LocalWhisper.dmg
+curl -L -o ~/Downloads/InsideVoice.dmg https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg
 ```
 
-Open the DMG, drag LocalWhisper to Applications, launch normally.
+Open the DMG, drag Inside Voice to Applications, launch normally.
 
 **Option B — if it arrived via browser / AirDrop / Messages:** after
 dragging to Applications, clear the quarantine flag:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/LocalWhisper.app
+xattr -dr com.apple.quarantine "/Applications/Inside Voice.app"
 ```
 
 (Or: attempt to open it once, then System Settings → Privacy & Security →
@@ -68,7 +68,7 @@ waveform icon → **Setup Assistant…**. Your grants will survive app updates �
 no re-granting on new builds.
 
 **The classic gotcha is Input Monitoring**: if the hotkey only works while
-LocalWhisper's own window is focused, that grant is missing.
+Inside Voice's own window is focused, that grant is missing.
 
 Day-to-day usage, menu reference, and troubleshooting live in the
 [User Guide](USER-GUIDE.md).
@@ -95,11 +95,11 @@ Day-to-day usage, menu reference, and troubleshooting live in the
 Note your Mac model, macOS version, and what app had focus. The app logs
 nothing by design, so a description of what you said vs. what appeared is
 the whole bug report. File an issue at
-[github.com/BillDX/LocalWhisper/issues](https://github.com/BillDX/LocalWhisper/issues),
+[github.com/BillDX/InsideVoice/issues](https://github.com/BillDX/InsideVoice/issues),
 or send reports to Bill directly.
 
 ## Uninstall
 
 ```bash
-rm -rf /Applications/LocalWhisper.app "$HOME/Library/Application Support/LocalWhisper"
+rm -rf "/Applications/Inside Voice.app" "$HOME/Library/Application Support/Inside Voice"
 ```

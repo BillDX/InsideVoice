@@ -1,11 +1,11 @@
 <!-- Public README. Lives in the private source repo at distribution/README.md
      and is copied to the public repo by scripts/publish-release.sh. Edit it there. -->
-# LocalWhisper
+# Inside Voice
 
 **Push-to-talk dictation for macOS that never leaves your Mac.** Hold Right ⌥
 (Option), speak, release — the transcript lands in whatever app has focus.
 
-[![Latest release](https://img.shields.io/github/v/release/BillDX/LocalWhisper?label=download&color=2ea44f)](https://github.com/BillDX/LocalWhisper/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/BillDX/InsideVoice?label=download&color=2ea44f)](https://github.com/BillDX/InsideVoice/releases/latest)
 ![Platform](https://img.shields.io/badge/macOS%2014%2B-Apple%20Silicon-black)
 
 ![The HUD while listening](docs/images/hud-listening.png)
@@ -19,9 +19,23 @@
 
 ## Download
 
-**[Download the latest DMG →](https://github.com/BillDX/LocalWhisper/releases/latest)**
-Open it, drag LocalWhisper to Applications, launch. The speech engine
+**[Download the latest DMG →](https://github.com/BillDX/InsideVoice/releases/latest)**
+Open it, drag Inside Voice to Applications, launch. The speech engine
 (Parakeet, 669 MB) downloads on first launch, checksum-verified.
+
+Or with Homebrew:
+
+```bash
+brew install --cask BillDX/tap/inside-voice
+```
+
+Add `--no-quarantine` to that command to skip the Gatekeeper step below.
+
+**Upgrading from LocalWhisper 1.2.0?** Same app, new name. Your models,
+vocabulary, substitution rules, and settings move over automatically on
+first launch. macOS treats the renamed app as new, so it will ask for the
+three permissions again and you'll re-enable Launch at Login; then delete
+the old LocalWhisper.app.
 
 Requirements: Apple Silicon Mac, macOS 14 or later (built and tested on
 macOS 26; 14 and 15 are untested). RAM while running: ~0.8 GB with Parakeet,
@@ -36,14 +50,14 @@ ID, so macOS will say it "could not verify" the app. Pick one:
 Gatekeeper never gets involved:
 
 ```bash
-curl -L -o ~/Downloads/LocalWhisper.dmg https://github.com/BillDX/LocalWhisper/releases/latest/download/LocalWhisper.dmg
+curl -L -o ~/Downloads/InsideVoice.dmg https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg
 ```
 
 **Browser download.** After dragging to Applications, either clear the
 quarantine flag:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/LocalWhisper.app
+xattr -dr com.apple.quarantine "/Applications/Inside Voice.app"
 ```
 
 or open the app once, dismiss the warning, then System Settings → Privacy &
@@ -101,7 +115,7 @@ your settings.
 
 ## Why this exists
 
-LocalWhisper is a working demonstration of **sovereign, on-device AI**: a
+Inside Voice is a working demonstration of **sovereign, on-device AI**: a
 complete speech product with no cloud dependency, provenance-verified models
 (SHA-256 checked against the publishers' hashes), a codebase small enough to
 audit in an afternoon, and no data exhaust. Built by
@@ -122,6 +136,6 @@ models it builds on.
 
 ## Feedback
 
-[Open an issue](https://github.com/BillDX/LocalWhisper/issues). The app logs
+[Open an issue](https://github.com/BillDX/InsideVoice/issues). The app logs
 nothing, so what you said vs. what appeared, plus your Mac model and macOS
 version, is the whole bug report.

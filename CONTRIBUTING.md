@@ -16,8 +16,8 @@ Practical notes:
 
 - Build with `scripts/build.sh` (README → Build from source). Before
   opening a PR, run the self-test, which needs no permissions:
-  `build/LocalWhisper.app/Contents/MacOS/LocalWhisper --selftest --engine both`
-- New theme: add a `Theme` under `Sources/LocalWhisper/Themes/`, register
+  `"build/Inside Voice.app/Contents/MacOS/InsideVoice" --selftest --engine both`
+- New theme: add a `Theme` under `Sources/Inside Voice/Themes/`, register
   it in `Themes.all`, render it with `--snapshot-hud`, and add the PNG to
   `docs/images/themes/` plus a row in the User Guide gallery.
 - Keep the privacy invariants: no audio to disk, no transcript logging,
@@ -25,7 +25,7 @@ Practical notes:
 
 ## Contributor License Agreement
 
-LocalWhisper is dual-licensed (`EUPL-1.2 OR GPL-3.0-or-later`), and the
+Inside Voice is dual-licensed (`EUPL-1.2 OR GPL-3.0-or-later`), and the
 copyright holder also offers commercial licenses and builds commercial
 editions on the same code. That only works if the project holds the
 rights to relicense everything it ships. So, by submitting a contribution
@@ -63,7 +63,7 @@ valuable; someone else can implement it.
 
 ## AI-assisted contributions
 
-Much of LocalWhisper was written with an AI coding assistant under close
+Much of Inside Voice was written with an AI coding assistant under close
 human direction, and AI-assisted contributions are fine. You remain
 responsible for what you submit: review it, test it, and make sure it
 doesn't reproduce third-party code under an incompatible license.
