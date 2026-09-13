@@ -11,7 +11,7 @@
   and re-enable Launch at Login. Delete the old LocalWhisper.app. The retro
   themes print the new name; developer env overrides are now
   `INSIDEVOICE_MODEL` / `INSIDEVOICE_PARAKEET_MODEL`.
-- Homebrew tap: `brew install --cask BillDX/tap/inside-voice`.
+- Homebrew tap: `brew trust BillDX/tap && brew tap BillDX/tap && brew install --cask inside-voice`.
 - Public repo moved to github.com/BillDX/InsideVoice; old links redirect.
 
 ## 1.2.0 — 2026-09-13

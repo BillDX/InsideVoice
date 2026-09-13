@@ -23,13 +23,17 @@
 Open it, drag Inside Voice to Applications, launch. The speech engine
 (Parakeet, 669 MB) downloads on first launch, checksum-verified.
 
-Or with Homebrew:
+Or with Homebrew (version 7 and later ask you to trust third-party taps
+first):
 
 ```bash
-brew install --cask BillDX/tap/inside-voice
+brew trust BillDX/tap
+brew tap BillDX/tap
+brew install --cask inside-voice
 ```
 
-Add `--no-quarantine` to that command to skip the Gatekeeper step below.
+Add `--no-quarantine` to the install command to skip the Gatekeeper step
+below.
 
 **Upgrading from LocalWhisper 1.2.0?** Same app, new name. Your models,
 vocabulary, substitution rules, and settings move over automatically on
