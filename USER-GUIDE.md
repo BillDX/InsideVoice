@@ -53,6 +53,9 @@ first):
 brew trust BillDX/tap && brew tap BillDX/tap && brew install --cask inside-voice
 ```
 
+If `brew trust` says "unknown command", your Homebrew is older than 7: skip
+that line.
+
 **First launch** opens the Setup Assistant: download the speech engine
 (Parakeet, 669 MB, checksum-verified; Whisper is an optional second
 download), grant Microphone, Input Monitoring, and Accessibility with
@@ -62,6 +65,12 @@ bottom unlocks when everything is green.
 
 **Requirements:** an Apple Silicon Mac on macOS 14 or later (built and
 tested on macOS 26). No internet after setup.
+
+**No good Wi-Fi for the 669 MB engine download?** If you have the model file
+from elsewhere (`ggml-parakeet-tdt-0.6b-v3-q8_0.bin`, published at
+[ggml-org/parakeet-GGUF](https://huggingface.co/ggml-org/parakeet-GGUF)), put
+it in `~/Library/Application Support/Inside Voice/models/` before launching;
+the Setup Assistant treats it as installed.
 
 **Uninstall:** drag the app to the Trash and delete
 `~/Library/Application Support/Inside Voice`, which holds the models and your

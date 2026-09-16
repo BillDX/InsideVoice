@@ -32,7 +32,15 @@ brew tap BillDX/tap
 brew install --cask inside-voice
 ```
 
-Later updates: `brew upgrade --cask inside-voice`.
+If `brew trust` says "unknown command", your Homebrew is older than 7: skip
+that line. Later updates: `brew upgrade --cask inside-voice`.
+
+**Slow or blocked Wi-Fi?** The DMG is 3 MB; the speech engine is a separate
+669 MB download on first launch. If someone hands you the model file
+instead (`ggml-parakeet-tdt-0.6b-v3-q8_0.bin`, from
+[ggml-org/parakeet-GGUF](https://huggingface.co/ggml-org/parakeet-GGUF)),
+drop it in `~/Library/Application Support/Inside Voice/models/` before
+launching and the Setup Assistant will see it as installed.
 
 **Upgrading from 1.3.0 or earlier?** 1.4.0 is the first notarized build, so
 its signing identity changed: macOS asks for the three permissions again and
