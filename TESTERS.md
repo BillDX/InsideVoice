@@ -18,34 +18,17 @@ are never logged.
 ## Install
 
 Grab the DMG from the
-[Releases page](https://github.com/BillDX/InsideVoice/releases/latest) —
-it's small; the speech model downloads on first launch.
-
-These builds are signed with a local certificate, **not** an Apple
-Developer ID, so Gatekeeper will object. Two ways around it:
-
-**Option A — fetch by terminal (no warnings at all):** quarantine is applied
-by the app that downloads a file; `curl` doesn't apply it, so Gatekeeper
-never gets involved:
+[Releases page](https://github.com/BillDX/InsideVoice/releases/latest) — it's
+small; the speech model downloads on first launch. Open it, drag Inside
+Voice to Applications, launch. Builds are notarized, so there is no
+Gatekeeper dance. Homebrew works too:
 
 ```bash
-curl -L -o ~/Downloads/InsideVoice.dmg https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg
+brew trust BillDX/tap && brew tap BillDX/tap && brew install --cask inside-voice
 ```
 
-Open the DMG, drag Inside Voice to Applications, launch normally.
-
-**Option B — if it arrived via browser / AirDrop / Messages:** after
-dragging to Applications, clear the quarantine flag:
-
-```bash
-xattr -dr com.apple.quarantine "/Applications/Inside Voice.app"
-```
-
-(Or: attempt to open it once, then System Settings → Privacy & Security →
-"Open Anyway".)
-
-There's nothing to build or sign on your side — the download is already
-signed. A `.sha256` file sits next to each DMG if you want to verify it.
+A `.sha256` file sits next to each DMG if you want to verify it. Nothing to
+build or sign on your side.
 
 ## First launch
 
@@ -64,8 +47,9 @@ The "Try it" field at the bottom stays disabled until everything above is
 green — that's your signal you're ready.
 
 The window updates live as grants land; reopen it anytime from the menu-bar
-waveform icon → **Setup Assistant…**. Your grants will survive app updates —
-no re-granting on new builds.
+waveform icon → **Setup Assistant…**. Your grants survive app updates — no re-granting on
+new builds, with one exception: 1.4.0 changed the signing identity (first
+notarized build), so everyone re-grants once on that update.
 
 **The classic gotcha is Input Monitoring**: if the hotkey only works while
 Inside Voice's own window is focused, that grant is missing.

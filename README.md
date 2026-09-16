@@ -32,43 +32,32 @@ brew tap BillDX/tap
 brew install --cask inside-voice
 ```
 
-Add `--no-quarantine` to the install command to skip the Gatekeeper step
-below.
+Later updates: `brew upgrade --cask inside-voice`.
 
-**Upgrading from LocalWhisper 1.2.0?** Same app, new name. Your models,
-vocabulary, substitution rules, and settings move over automatically on
-first launch. macOS treats the renamed app as new, so it will ask for the
-three permissions again and you'll re-enable Launch at Login; then delete
-the old LocalWhisper.app.
+**Upgrading from 1.3.0 or earlier?** 1.4.0 is the first notarized build, so
+its signing identity changed: macOS asks for the three permissions again and
+Launch at Login needs re-enabling. The Setup Assistant opens to handle it.
+Coming from LocalWhisper, your models, word lists, and settings move over
+automatically; delete the old LocalWhisper.app afterwards.
 
 Requirements: Apple Silicon Mac, macOS 14 or later (built and tested on
 macOS 26; 14 and 15 are untested). RAM while running: ~0.8 GB with Parakeet,
 ~1.7 GB with the optional Whisper engine.
 
-### Install — the one-time Gatekeeper step
+### Install
 
-These builds are signed with a local certificate, not yet an Apple Developer
-ID, so macOS will say it "could not verify" the app. Pick one:
-
-**Terminal, no warnings.** Files fetched with `curl` aren't quarantined, so
-Gatekeeper never gets involved:
+Builds are signed with a Developer ID and notarized by Apple, so macOS
+opens them without warnings. Every release ships a `.sha256` next to the
+DMG if you want to verify the download:
 
 ```bash
-curl -L -o ~/Downloads/InsideVoice.dmg https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg
+curl -L -O https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg.sha256
+shasum -a 256 -c InsideVoice.dmg.sha256
 ```
 
-**Browser download.** After dragging to Applications, either clear the
-quarantine flag:
-
-```bash
-xattr -dr com.apple.quarantine "/Applications/Inside Voice.app"
-```
-
-or open the app once, dismiss the warning, then System Settings → Privacy &
-Security → scroll down to Security → **Open Anyway**.
-
-Every release ships a `.sha256` next to the DMG if you want to verify the
-download. Notarized builds are planned.
+To remove it later: drag the app to the Trash and delete
+`~/Library/Application Support/Inside Voice` (the downloaded models and your
+word lists), or `brew uninstall --zap --cask inside-voice`.
 
 ### First launch
 
@@ -91,15 +80,14 @@ is green.
 - **Accuracy stack.** Personal vocabulary list and presets, silence trim,
   voice-activity detection so long pauses can't derail a dictation, beam
   search, and deterministic substitution rules.
-- **Nine HUD themes**, purely cosmetic: Modern, Green Phosphor, Red Eye,
-  Starship, RetroComp '82, Oscilloscope, Punch Card, Groovy, and an 8-bit
-  Happy Cloud that pours rainbows. Full gallery in the
+- **Seven HUD themes**, purely cosmetic: Modern, Green Phosphor, Red Eye,
+  RetroComp '82, Oscilloscope, Groovy, and Glitter Text. Full gallery in the
   [User Guide](USER-GUIDE.md#the-menu-bar-icon).
 - **Simple menu.** Everyday items up top, everything else under Advanced ▸.
 
 | | | |
 |---|---|---|
-| ![Modern](docs/images/themes/modern.png) | ![Green Phosphor](docs/images/themes/phosphor.png) | ![Happy Cloud](docs/images/themes/cloud.png) |
+| ![Modern](docs/images/themes/modern.png) | ![Glitter Text](docs/images/themes/glitter.png) | ![Groovy](docs/images/themes/groovy.png) |
 
 ## Documentation
 

@@ -39,6 +39,34 @@ Some details you'll discover anyway, made explicit:
   sentence naturally and whisper punctuates it. (Spoken "new line" /
   "scratch that" commands are on the roadmap, not in the app yet.)
 
+## Installing
+
+**Download** the DMG from the
+[Releases page](https://github.com/BillDX/InsideVoice/releases/latest), open
+it, drag Inside Voice to Applications, and launch. Builds are signed with a
+Developer ID and notarized by Apple, so there is no Gatekeeper warning.
+
+**Or with Homebrew** (version 7 and later ask you to trust third-party taps
+first):
+
+```bash
+brew trust BillDX/tap && brew tap BillDX/tap && brew install --cask inside-voice
+```
+
+**First launch** opens the Setup Assistant: download the speech engine
+(Parakeet, 669 MB, checksum-verified; Whisper is an optional second
+download), grant Microphone, Input Monitoring, and Accessibility with
+step-by-step guidance, switch on Start at login, and confirm on the keyboard
+diagram that you are pressing the *right* Option key. The test field at the
+bottom unlocks when everything is green.
+
+**Requirements:** an Apple Silicon Mac on macOS 14 or later (built and
+tested on macOS 26). No internet after setup.
+
+**Uninstall:** drag the app to the Trash and delete
+`~/Library/Application Support/Inside Voice`, which holds the models and your
+word lists — or `brew uninstall --zap --cask inside-voice`.
+
 ## The menu bar icon
 
 The waveform circle in your menu bar is the whole interface. Its shape
@@ -113,19 +141,17 @@ option). On Apple Silicon the speed cost is essentially zero, so leave it
 on; the toggle exists for older or busy machines.
 
 **Theme** — how the dictation HUD looks and talks. Purely cosmetic,
-switchable anytime, applies to your next utterance. Nine to choose from:
+switchable anytime, applies to your next utterance. Seven to choose from:
 
 | Theme | |
 |---|---|
 | **Modern** (default) — native translucent panel, green mic, accent-colored meter | ![](docs/images/themes/modern.png) |
 | **Green Phosphor** — glowing CRT terminal, scanlines, blinking cursor | ![](docs/images/themes/phosphor.png) |
 | **Red Eye** — a red lens that swells as you speak and addresses you by name; unhurried breathing while it thinks | ![](docs/images/themes/hal.png) |
-| **Starship** — bridge-computer panel, ticking readouts, a blinking WORKING | ![](docs/images/themes/lcars.png) |
 | **RetroComp '82** — royal blue 8-bit screen, chunky pixel meter, raster-bar loading border | ![](docs/images/themes/c64.png) |
 | **Oscilloscope** — graticule screen, glowing trace riding your voice; Lissajous figure while analyzing | ![](docs/images/themes/scope.png) |
-| **Punch Card** — your voice punches an 80-column card; the reader sweeps and stamps it READING | ![](docs/images/themes/punchcard.png) |
 | **Groovy** — 1968 flower power: doors swing open with flowers springing out, a daisy meter, go-go headlines | ![](docs/images/themes/groovy.png) |
-| **Happy Cloud** — 8-bit sprite: a chunky cloud with big eyes and an open mouth on its belly pours a rainbow straight down; it bends through a pixel elbow and runs off as a stepped river — the river is the meter. Blinks, splashes, smiles while digesting | ![](docs/images/themes/cloud.png) |
+| **Glitter Text** — Y2K glitter graphics: bubbly sticker-edged letters filled with shimmering pink, gold, and lilac, sparkles twinkling inside them and drifting across a pastel sky. A different headline each time (SPARKLE ON, SO SHINY, USE YOUR INSIDE VOICE), a glitter bar that gets denser the louder you are, chasing sparkles while loading, and a glitter-bomb burst of hearts and stars when your text lands | ![](docs/images/themes/glitter.png) |
 
 **Play Sound on Insert** — a soft pop when text lands. Off by default.
 
@@ -196,11 +222,13 @@ Parakeet (or Auto with vocabulary off) if speed matters more than jargon.
 
 ## Updating
 
-For now, updates arrive as a new DMG: open it, drag Inside Voice to
-Applications, and click Replace. Everything important survives the swap —
+Updates arrive as a new DMG on the
+[Releases page](https://github.com/BillDX/InsideVoice/releases): open it,
+drag Inside Voice to Applications, click Replace. Homebrew users:
+`brew upgrade --cask inside-voice`. Everything important survives the swap —
 
-- your three permission grants (they're tied to the app's signing identity,
-  not the individual build),
+- your three permission grants (they are tied to the app's signing
+  identity, not the individual build),
 - the downloaded models, your vocabulary and substitution lists, and all
   settings (they live in `~/Library/Application Support/Inside Voice/`,
   outside the app).
@@ -208,14 +236,16 @@ Applications, and click Replace. Everything important survives the swap —
 Quit the running copy first (menu → Quit Inside Voice), replace, relaunch.
 If it was set to launch at login, that carries over too.
 
-**Coming from LocalWhisper (1.2.0 or earlier):** the 1.3.0 rename keeps your
-models, lists, and settings — they're moved to the new locations on first
-launch — but macOS treats the renamed app as new: re-grant the three
-permissions (the Setup Assistant opens to walk you through it), re-enable
-Launch at Login, and delete the old LocalWhisper.app.
+**Two updates that reset the permissions once.** 1.3.0 renamed the app from
+LocalWhisper (new bundle identifier), and 1.4.0 is the first notarized build
+(new signing identity). After either, macOS asks for Microphone, Input
+Monitoring, and Accessibility again and Launch at Login needs one click; the
+Setup Assistant opens on its own to walk you through it. Your models, word
+lists, and settings are kept — the rename moves them to the new location on
+first launch. Delete the old LocalWhisper.app if it is still around.
 
-In-app automatic updates ("a new version is available…") are planned for
-the notarized public release.
+In-app automatic updates ("a new version is available…") are on the
+roadmap.
 
 ## Requirements, briefly
 

@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.4.0 — 2026-09-16
+
+- **First notarized release.** Signed with a Developer ID under the hardened
+  runtime, notarized by Apple and stapled: the DMG opens with no Gatekeeper
+  warning, and the Homebrew cask no longer needs `--no-quarantine`. The
+  signing identity changed with this, so macOS asks for Microphone, Input
+  Monitoring, and Accessibility once more after updating; the Setup
+  Assistant opens to walk through it, and Launch at Login needs one click.
+- New theme: **Glitter Text** — early-2000s glitter graphics. Bubbly
+  sticker-edged letters filled with shimmering pink, gold, and lilac and
+  twinkling flecks, a holographic shine sweep, a pastel sky of drifting
+  sparkles. Headlines rotate (SPARKLE ON, SO SHINY, USE YOUR INSIDE
+  VOICE); LOCKED IN gets a glittery padlock; LOADING
+  gets three chasing sparkles; the meter is a glitter bar whose flecks
+  thicken with your voice. When the text lands, a glitter bomb of hearts,
+  stars, and dots bursts from the headline and the panel fades out.
+- Themes can now play a send-off after the transcript is inserted
+  (`outroDuration` / `beginOutro` on `ThemeHUDView`); the HUD stays up for
+  that long, and a new utterance cancels it. `--snapshot-hud … --state
+  outro` renders the moment.
+- Themes trimmed: **Starship, Punch Card, and Happy Cloud removed** while
+  the theme set is revised before the first notarized release. Anyone who
+  had one selected falls back to Modern. Six themes remain: Modern, Green
+  Phosphor, Red Eye, RetroComp '82, Oscilloscope, Groovy.
+- Release pipeline: Developer ID signing with hardened runtime and a secure
+  timestamp, notarization and stapling of both the app and the DMG
+  (`scripts/notarize.sh`, wired into `publish-release.sh`). The first
+  notarized build changes the app's signing identity, so macOS will ask
+  for Microphone, Input Monitoring, and Accessibility once more; the Setup
+  Assistant walks through it.
+
 ## 1.3.0 — 2026-09-13
 
 - **Renamed to Inside Voice** (was LocalWhisper). Models, vocabulary,

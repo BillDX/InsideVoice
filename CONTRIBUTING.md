@@ -19,7 +19,9 @@ Practical notes:
   `"build/Inside Voice.app/Contents/MacOS/InsideVoice" --selftest --engine both`
 - New theme: add a `Theme` under `Sources/Inside Voice/Themes/`, register
   it in `Themes.all`, render it with `--snapshot-hud`, and add the PNG to
-  `docs/images/themes/` plus a row in the User Guide gallery.
+  `docs/images/themes/` plus a row in the User Guide gallery. Optional:
+  override `outroDuration` and `beginOutro()` to play a send-off after the
+  text lands (`--snapshot-hud … --state outro` renders it).
 - Keep the privacy invariants: no audio to disk, no transcript logging,
   no network at runtime.
 
