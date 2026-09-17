@@ -113,6 +113,29 @@ operation the app ever performs is the model download you approve in setup.
 What's on disk: the models, your vocabulary and substitution text files, and
 your settings.
 
+## For teams
+
+Inside Voice is free to use at work, on as many Macs as you like. If your
+team needs more than a download, that is what I do:
+
+- **Rollout help** for managed Macs: packaging, the three permission
+  prompts, and what your MDM can and cannot pre-approve.
+- **Your vocabulary, built in.** Word lists and substitution rules for your
+  product names, people, and jargon, so transcripts come out right the first
+  time.
+- **A support agreement.** A named contact, response times, and fixes when a
+  macOS update moves something.
+- **Security review support.** The privacy model in writing, answers to your
+  vendor questionnaire, and a codebase small enough for your own team to
+  audit.
+- **A commercial license** where copyleft does not fit: embedding the engine
+  in your own product, or a policy that excludes GPL software.
+
+On the roadmap, and shaped by whoever asks first: settings locked by policy,
+themes off by default, an audit trail, and a compliance pack.
+
+Write to <inquiries@atomo.com>, or open an issue titled "For teams".
+
 ## Why this exists
 
 Inside Voice is a working demonstration of **sovereign, on-device AI**: a
