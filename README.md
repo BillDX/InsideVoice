@@ -88,8 +88,9 @@ is green.
 - **Accuracy stack.** Personal vocabulary list and presets, silence trim,
   voice-activity detection so long pauses can't derail a dictation, beam
   search, and deterministic substitution rules.
-- **Seven HUD themes**, purely cosmetic: Modern, Green Phosphor, Red Eye,
-  RetroComp '82, Oscilloscope, Groovy, and Glitter Text. Full gallery in the
+- **Eight HUD themes**, purely cosmetic: Modern, Green Phosphor, Red Eye,
+  RetroComp '82, Oscilloscope, Groovy, Glitter Text, and Mission: Danger!.
+  Full gallery in the
   [User Guide](USER-GUIDE.md#the-menu-bar-icon).
 - **Simple menu.** Everyday items up top, everything else under Advanced ▸.
 

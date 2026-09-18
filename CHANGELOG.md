@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.5.0 — 2026-09-18
+
+- New theme: **Mission: Danger!** — a 1960s secret-agent case file. A
+  manila folder stamped TOP SECRET; a teletype prints the wire
+  telegram-style (AGENT ON THE WIRE STOP SPEAK NOW STOP) while a strip of
+  five-hole paper tape is punched in time with your voice, and the punch's
+  lamp shows red for recording, blinking for locked, amber for decoding.
+  While transcribing, the teletype hammers out five-letter cipher groups;
+  when the text lands, a worn red FILE CLOSED stamp slams onto the file.
+- Fixed: dictating into the Setup Assistant's test field did nothing,
+  though typing worked. Inside Voice lives in the menu bar with no main
+  menu, so nothing picked up the ⌘V it posts to deliver text into its own
+  window. It now has a hidden Edit menu, so dictation, ⌘C, ⌘V, ⌘A and ⌘Z
+  all work in that field. Dictating into other apps was never affected.
+- Fixed: with Glitter Text, starting a new dictation within about a second
+  of the last one landing left the HUD invisible for that whole dictation,
+  because the glitter bomb's fade-out kept running. A new dictation now
+  cancels it.
+- RetroComp '82's banner now reads `**** INSIDE VOICE '82 ****`, matching
+  the theme's name. If you had the theme selected, it stays selected.
+
 ## 1.4.0 — 2026-09-16
 
 - **First notarized release.** Signed with a Developer ID under the hardened

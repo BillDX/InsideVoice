@@ -150,17 +150,18 @@ option). On Apple Silicon the speed cost is essentially zero, so leave it
 on; the toggle exists for older or busy machines.
 
 **Theme** — how the dictation HUD looks and talks. Purely cosmetic,
-switchable anytime, applies to your next utterance. Seven to choose from:
+switchable anytime, applies to your next utterance. Eight to choose from:
 
 | Theme | |
 |---|---|
 | **Modern** (default) — native translucent panel, green mic, accent-colored meter | ![](docs/images/themes/modern.png) |
 | **Green Phosphor** — glowing CRT terminal, scanlines, blinking cursor | ![](docs/images/themes/phosphor.png) |
 | **Red Eye** — a red lens that swells as you speak and addresses you by name; unhurried breathing while it thinks | ![](docs/images/themes/hal.png) |
-| **RetroComp '82** — royal blue 8-bit screen, chunky pixel meter, raster-bar loading border | ![](docs/images/themes/c64.png) |
+| **RetroComp '82** — royal blue 8-bit screen, chunky pixel meter, raster-bar loading border | ![](docs/images/themes/retrocomp82.png) |
 | **Oscilloscope** — graticule screen, glowing trace riding your voice; Lissajous figure while analyzing | ![](docs/images/themes/scope.png) |
 | **Groovy** — 1968 flower power: doors swing open with flowers springing out, a daisy meter, go-go headlines | ![](docs/images/themes/groovy.png) |
 | **Glitter Text** — Y2K glitter graphics: bubbly sticker-edged letters filled with shimmering pink, gold, and lilac, sparkles twinkling inside them and drifting across a pastel sky. A different headline each time (SPARKLE ON, SO SHINY, USE YOUR INSIDE VOICE), a glitter bar that gets denser the louder you are, chasing sparkles while loading, and a glitter-bomb burst of hearts and stars when your text lands | ![](docs/images/themes/glitter.png) |
+| **Mission: Danger!** — a 1960s secret-agent case file: manila folder stamped TOP SECRET, a teletype printing the wire telegram-style (AGENT ON THE WIRE STOP SPEAK NOW STOP), and five-hole paper tape punched in time with your voice. It hammers out cipher groups while decoding, and a FILE CLOSED stamp slams down when your text lands | ![](docs/images/themes/dossier.png) |
 
 **Play Sound on Insert** — a soft pop when text lands. Off by default.
 
