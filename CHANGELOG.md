@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 — 2026-09-19
+
+- The Mission: Danger! theme is now called **Top Secret**. If you had it
+  selected, it stays selected.
+- Top Secret's teletype is cheekier: every dictation gets a new silly
+  codename (COME IN SOGGY WAFFLE STOP, MIDNIGHT BISCUIT HAS THE FLOOR STOP)
+  that also goes on the folder, decoding reads INTERCEPT RECEIVED, the
+  sign-off is DELIVERED STOP SHRED AFTER READING STOP, and the final stamp
+  says CASE CLOSED.
+
 ## 1.5.0 — 2026-09-18
 
 - New theme: **Mission: Danger!** — a 1960s secret-agent case file. A

@@ -89,7 +89,7 @@ is green.
   voice-activity detection so long pauses can't derail a dictation, beam
   search, and deterministic substitution rules.
 - **Eight HUD themes**, purely cosmetic: Modern, Green Phosphor, Red Eye,
-  RetroComp '82, Oscilloscope, Groovy, Glitter Text, and Mission: Danger!.
+  RetroComp '82, Oscilloscope, Groovy, Glitter Text, and Top Secret.
   Full gallery in the
   [User Guide](USER-GUIDE.md#the-menu-bar-icon).
 - **Simple menu.** Everyday items up top, everything else under Advanced ▸.

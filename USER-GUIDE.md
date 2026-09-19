@@ -161,7 +161,7 @@ switchable anytime, applies to your next utterance. Eight to choose from:
 | **Oscilloscope** — graticule screen, glowing trace riding your voice; Lissajous figure while analyzing | ![](docs/images/themes/scope.png) |
 | **Groovy** — 1968 flower power: doors swing open with flowers springing out, a daisy meter, go-go headlines | ![](docs/images/themes/groovy.png) |
 | **Glitter Text** — Y2K glitter graphics: bubbly sticker-edged letters filled with shimmering pink, gold, and lilac, sparkles twinkling inside them and drifting across a pastel sky. A different headline each time (SPARKLE ON, SO SHINY, USE YOUR INSIDE VOICE), a glitter bar that gets denser the louder you are, chasing sparkles while loading, and a glitter-bomb burst of hearts and stars when your text lands | ![](docs/images/themes/glitter.png) |
-| **Mission: Danger!** — a 1960s secret-agent case file: manila folder stamped TOP SECRET, a teletype printing the wire telegram-style (AGENT ON THE WIRE STOP SPEAK NOW STOP), and five-hole paper tape punched in time with your voice. It hammers out cipher groups while decoding, and a FILE CLOSED stamp slams down when your text lands | ![](docs/images/themes/dossier.png) |
+| **Top Secret** — a 1960s secret-agent case file: manila folder stamped TOP SECRET, a teletype hailing a new silly codename every time you dictate (COME IN SOGGY WAFFLE STOP), and five-hole paper tape punched in time with your voice. It hammers out cipher groups while decoding, and a CASE CLOSED stamp slams down when your text lands (DELIVERED STOP SHRED AFTER READING STOP) | ![](docs/images/themes/dossier.png) |
 
 **Play Sound on Insert** — a soft pop when text lands. Off by default.
 
