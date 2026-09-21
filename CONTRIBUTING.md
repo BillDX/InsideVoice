@@ -24,6 +24,9 @@ Practical notes:
   text lands (`--snapshot-hud … --state outro` renders it).
 - Keep the privacy invariants: no audio to disk, no transcript logging,
   no network at runtime.
+- New source files start with the three-line copyright and SPDX header
+  that every existing file carries. Leave existing headers and the About
+  panel's notices intact (see LICENSING.md → Attribution).
 
 ## Contributor License Agreement
 

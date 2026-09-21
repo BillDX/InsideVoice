@@ -27,6 +27,33 @@ Neither license restricts *use*. Individuals, companies, schools, and
 public bodies may run Inside Voice on as many Macs as they like at no
 cost. The open edition has no personal-use-only clause.
 
+## Attribution
+
+Both licenses already require anyone who shares Inside Voice, modified or
+not, to keep its copyright and license notices intact and to mark a
+modified version as modified (EUPL Article 5, "Attribution right"; GPL
+sections 4 and 5). Those notices are the header at the top of each source
+file and the app's **About Inside Voice** panel, which shows the
+copyright line, the license, the no-warranty statement, and links to the
+license texts.
+
+Under the GPL option, these additional terms apply, as GPL section 7
+permits:
+
+- **Keep the author attribution (section 7(b)).** Preserve
+  "Copyright © 2026 Bill McIntyre" in the About panel, which is the
+  program's Appropriate Legal Notices, and in each source file's header.
+  Add your own notices next to it, not in place of it.
+- **Mark modified versions (section 7(c)).** The About panel of a
+  modified version must say that it is modified and based on
+  Inside Voice by Bill McIntyre.
+
+That is all the attribution required. You don't have to credit the
+project in marketing, on a splash screen, or anywhere else a user wouldn't
+look for legal notices. If you build something on Inside Voice, a line
+such as "Based on Inside Voice by Bill McIntyre" in your documentation is
+appreciated, but not required.
+
 ## Commercial licensing
 
 If the copyleft terms don't fit — for example you want to embed

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.5.2 — 2026-09-21
+
+- New **About Inside Voice** menu item: version, copyright, a plain
+  statement of the license and the no-warranty terms, and links to the
+  license texts shipped inside the app.
+- **Licensing:** LICENSING.md now spells out attribution. Both licenses
+  require keeping the copyright and license notices; under the GPL option,
+  forks must also keep the author attribution in the About panel and say
+  that their version is modified (GPL section 7(b) and (c)). Every source
+  file now carries a copyright and SPDX license header.
+
 ## 1.5.1 — 2026-09-19
 
 - The Mission: Danger! theme is now called **Top Secret**. If you had it

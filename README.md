@@ -153,8 +153,8 @@ GPL, at your option — and this repository will become its home, so the links
 here won't change. Until then this is the download and documentation home.
 
 The app is free to use for everyone, businesses included. See
-[LICENSING.md](LICENSING.md) for the terms, commercial licensing
-(`inquiries@atomo.com`), and the trademark policy;
+[LICENSING.md](LICENSING.md) for the terms (including attribution),
+commercial licensing (`inquiries@atomo.com`), and the trademark policy;
 [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) lists the components and
 models it builds on.
 

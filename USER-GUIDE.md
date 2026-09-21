@@ -178,6 +178,9 @@ field). Harmless to open anytime.
 
 **Launch at Login** — what it says.
 
+**About Inside Voice** — the version, the copyright, the license, and links
+to the license texts that ship inside the app.
+
 ## Privacy model, in plain language
 
 - Audio is captured to memory, transcribed on this Mac, and gone. It never
