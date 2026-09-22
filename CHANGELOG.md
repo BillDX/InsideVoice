@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.5.3 — 2026-09-21
+
+- The hands-free lock (hold Right ⌥, tap Right ⌘, let go; tap Right ⌥ to
+  finish) is now shown where you'll see it: a second line in the menu, the
+  Setup Assistant (the Right ⌘ key is marked "lock" on the keyboard
+  diagram, with a tip below it, and pressing the two keys confirms it),
+  and the listening HUD in Modern, Glitter Text, and Top Secret
+  ("⌘ to lock"). The README and User Guide now lead with both gestures.
+- **macOS 14 and 15 fix.** Earlier releases bundled speech-engine libraries
+  built for macOS 26. On macOS 14 (Sonoma) that kept the GPU (Metal) engine
+  from loading, so Whisper fell back to the CPU and ran many times slower
+  (Parakeet was unaffected). whisper.cpp and ggml are now built from source
+  for macOS 14, and the build refuses to package any part that needs a
+  newer macOS than the app supports. The bundle no longer includes
+  `libomp`; ggml uses its own thread pool, with the same speed.
+
 ## 1.5.2 — 2026-09-21
 
 - New **About Inside Voice** menu item: version, copyright, a plain

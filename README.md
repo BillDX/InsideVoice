@@ -4,11 +4,14 @@
 
 **Push-to-talk dictation for macOS that never leaves your Mac.** Hold Right ⌥
 (Option), speak, release — the transcript lands in whatever app has focus.
+Got a lot to say? Tap **Right ⌘** while holding to lock recording on, let
+go, and talk hands-free; tap Right ⌥ to finish.
 
 [![Latest release](https://img.shields.io/github/v/release/BillDX/InsideVoice?label=download&color=2ea44f)](https://github.com/BillDX/InsideVoice/releases/latest)
 ![Platform](https://img.shields.io/badge/macOS%2014%2B-Apple%20Silicon-black)
 
 ![The HUD while listening](docs/images/hud-listening.png)
+![The HUD while locked on, hands-free](docs/images/hud-locked.png)
 
 - **No network at runtime.** Speech is transcribed on-device by NVIDIA
   Parakeet TDT or OpenAI Whisper large-v3-turbo (via whisper.cpp),
@@ -79,9 +82,12 @@ is green.
 
 ## What it does
 
-- **One gesture.** Hold Right ⌥ and talk; quick taps are ignored, so the key
-  still works as a normal modifier. For long dictation, tap Right ⌘ while
-  holding to **latch** hands-free; tap Right ⌥ to finish.
+- **Hold to talk.** Hold Right ⌥ and speak; release to insert. Quick taps
+  are ignored, so the key still works as a normal modifier.
+- **Lock for hands-free.** While holding Right ⌥, tap Right ⌘ (the key next
+  to it) and let go of both: recording stays on, with a lock showing on
+  screen the whole time, until you tap Right ⌥ to finish. Made for long
+  dictation.
 - **Two engines, auto-routed.** Parakeet (fast, best plain-English accuracy,
   European languages) and Whisper (99 languages, steerable by your
   vocabulary). *Auto* picks per utterance.

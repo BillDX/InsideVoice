@@ -87,6 +87,6 @@ to relicense every line it ships.
 ## Third-party components
 
 The speech engines, ggml, the bundled VAD model, and the models the app
-downloads are under MIT, Apache-2.0, and CC-BY-4.0 licenses — see
+downloads are under MIT and CC-BY-4.0 licenses — see
 [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md), also shipped inside
 the app bundle. None of them constrain the licensing choices above.

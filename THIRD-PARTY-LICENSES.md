@@ -14,10 +14,6 @@ https://github.com/ggml-org/whisper.cpp
 Copyright (c) 2023-2026 The ggml authors
 https://github.com/ggml-org/ggml
 
-### LLVM OpenMP runtime (libomp) — Apache License 2.0 with LLVM Exceptions
-Copyright The LLVM Project.
-Full text: https://llvm.org/LICENSE.txt
-
 ## Models
 
 ### Silero VAD (ggml conversion, bundled in Contents/Resources) — MIT License

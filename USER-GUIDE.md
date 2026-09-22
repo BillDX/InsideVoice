@@ -7,19 +7,30 @@ your cursor is — any app, any text field. That's the whole product; the rest
 of this guide is refinement.
 
 While you hold the key, a small floating panel shows a live level meter
-("Listening — release ⌥ to insert"), then a spinner ("Transcribing…"), then
+("Release ⌥ to insert · ⌘ to lock"), then a spinner ("Transcribing…"), then
 disappears as the text lands. On an M-series Mac the wait after release is
 under a second for typical utterances.
 
-**For long dictations, latch it:** while holding Right ⌥, tap **Right ⌘**
-(right next to it) — the recording locks and you can let go of everything.
-Speak as long as you like; the HUD stays on screen with a lock indicator
-the whole time so you always know the mic is live. Tap Right ⌥ once to
-finish and insert. The latch chord starts from a held key, so it never
-looks like a double-tap to other apps' hotkey gestures.
+| To… | Do this |
+|---|---|
+| Dictate a sentence or two | **Hold Right ⌥**, speak, release |
+| Dictate hands-free, as long as you like | Hold Right ⌥, **tap Right ⌘**, let go of both. Tap Right ⌥ to finish |
 
 ![The HUD while listening](docs/images/hud-listening.png)
-![The HUD while latched](docs/images/hud-locked.png)
+![The HUD while locked on](docs/images/hud-locked.png)
+
+### Hands-free: lock it on
+
+For anything longer than a breath, lock the recording (the "latch"): while
+holding Right ⌥, tap **Right ⌘**, the key right next to it. The recording
+locks on and you can let go of everything. Speak as long as you like, pauses
+included; the HUD stays on screen with a lock indicator the whole time, so
+you always know the mic is live. Tap Right ⌥ once to finish and insert.
+
+The lock starts from a held key, so it never looks like a double-tap to
+other apps' hotkey gestures. The reminders are in the app too: the menu's
+second line, the Setup Assistant's keyboard diagram, and the listening HUD
+("⌘ to lock") in the Modern, Glitter Text, and Top Secret themes.
 
 Some details you'll discover anyway, made explicit:
 
