@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.5.4 — 2026-09-23
+
+- **Crash fix.** Pressing the dictation key after the audio input had
+  changed (a headset or dock plugged or unplugged, AirPods connecting,
+  sleep/wake) could quit the app on the spot: the audio engine rejected a
+  stale input format with an exception Swift cannot catch. Every dictation
+  now starts a fresh audio engine, that call is fenced so a failure shows
+  "Mic unavailable" instead of quitting, and an input change *during* a
+  recording ends the dictation cleanly with what was heard so far (the
+  menu says why until the next dictation). The reason for a capture
+  failure goes to the unified log, category "audio"; still never any
+  audio or text.
+- Parakeet gets the decode watchdog whisper has had: a wedged decode aborts
+  after twice the clip length (never under a minute) instead of leaving the
+  app stuck on "Transcribing…" with the hotkey apparently dead. The whisper
+  watchdog is now also kept alive for the whole decode; Swift was free to
+  release it early.
+
 ## 1.5.3 — 2026-09-21
 
 - The hands-free lock (hold Right ⌥, tap Right ⌘, let go; tap Right ⌥ to
