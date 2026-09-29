@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.5 — 2026-09-29
+
+- Fixed: an install that started with Whisper had no way to add Parakeet.
+  The Setup Assistant's "Speech engine" row went green without a Download
+  button. It now offers Parakeet when only Whisper is installed. Choosing
+  an engine that isn't downloaded yet in Advanced → Engine now opens the
+  Setup Assistant.
+
 ## 1.5.4 — 2026-09-23
 
 - **Crash fix.** Pressing the dictation key after the audio input had

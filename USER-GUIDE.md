@@ -123,7 +123,7 @@ is fully supported (whisper covers ~99 languages).
 - **Parakeet** — the accuracy pick for *plain* English (it beats whisper on
   standard English benchmarks), several times faster, and immune to
   whisper's invent-text-on-silence quirk. European languages only. A
-  separate 669 MB download (Setup Assistant → "Parakeet engine");
+  separate 669 MB download (Setup Assistant → "Speech engine" → Download);
   substitution rules still apply, so your forced spellings survive.
 - **Auto** (default) — quality-first routing: Whisper whenever your vocabulary is
   active (its jargon edge) or the language needs it (Japanese, Chinese,
