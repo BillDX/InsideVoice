@@ -2,13 +2,48 @@
      and is copied to the public repo by scripts/publish-release.sh. Edit it there. -->
 # Inside Voice
 
-**Push-to-talk dictation for macOS that never leaves your Mac.** Hold Right ⌥
-(Option), speak, release — the transcript lands in whatever app has focus.
-Got a lot to say? Tap **Right ⌘** while holding to lock recording on, let
-go, and talk hands-free; tap Right ⌥ to finish.
+**Push-to-talk dictation for macOS that never leaves your Mac.** Hold the
+right-hand ⌥ Option key, speak, let go: your words are typed into whatever
+app you're using. Free, private, no account.
 
-[![Latest release](https://img.shields.io/github/v/release/BillDX/InsideVoice?label=download&color=2ea44f)](https://github.com/BillDX/InsideVoice/releases/latest)
+## ⬇️ Download
+
+### **[Download Inside Voice for Mac](https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg)** (4 MB)
+
+[![Latest release](https://img.shields.io/github/v/release/BillDX/InsideVoice?label=latest&color=2ea44f)](https://github.com/BillDX/InsideVoice/releases/latest)
 ![Platform](https://img.shields.io/badge/macOS%2014%2B-Apple%20Silicon-black)
+
+You need a Mac with Apple Silicon (an M1 or newer chip) on macOS 14 or
+later. Not sure? Apple menu → **About This Mac**: the "Chip" line should
+say Apple M-something.
+
+No GitHub account needed. The link above downloads the app directly; you
+can ignore the green **Code** button and the file list on this page, which
+are documentation, not the app.
+
+### Install it in five steps
+
+1. **Download.** Click the link above. `InsideVoice.dmg` lands in your
+   Downloads folder.
+2. **Open the DMG.** Double-click it. A window opens showing the Inside
+   Voice icon and an Applications folder.
+3. **Drag Inside Voice onto Applications.** Then close the window and eject
+   the disk (the ⏏ next to "Inside Voice" in Finder's sidebar).
+4. **Launch it.** Open your Applications folder and double-click Inside
+   Voice. It has no Dock icon; it lives in the menu bar at the top right of
+   your screen as a small waveform circle. The app is signed and notarized
+   by Apple, so it opens without security warnings.
+5. **Follow the Setup Assistant.** It opens on first launch. Click
+   **Download** for the speech engine (669 MB, one time), then allow the
+   three permissions it asks for (Microphone, Input Monitoring,
+   Accessibility). Each row tells you exactly what to click. When
+   everything is green, try it in the test field at the bottom.
+
+![The Setup Assistant](docs/images/setup-assistant.png)
+
+**Then just use it:** click into any text field, hold Right ⌥, speak, and
+let go. Got a lot to say? While holding Right ⌥, tap **Right ⌘** to lock
+recording on, let go, and talk hands-free; tap Right ⌥ to finish.
 
 ![The HUD while listening](docs/images/hud-listening.png)
 ![The HUD while locked on, hands-free](docs/images/hud-locked.png)
@@ -20,14 +55,10 @@ go, and talk hands-free; tap Right ⌥ to finish.
   text lands.
 - **Nothing is logged.** No transcript history, no telemetry, no account.
 
-## Download
+## More install options
 
-**[Download the latest DMG →](https://github.com/BillDX/InsideVoice/releases/latest)**
-Open it, drag Inside Voice to Applications, launch. The speech engine
-(Parakeet, 669 MB) downloads on first launch, checksum-verified.
-
-Or with Homebrew (version 7 and later ask you to trust third-party taps
-first):
+**Homebrew.** If you use it (version 7 and later ask you to trust
+third-party taps first):
 
 ```bash
 brew trust BillDX/tap
@@ -38,8 +69,15 @@ brew install --cask inside-voice
 If `brew trust` says "unknown command", your Homebrew is older than 7: skip
 that line. Later updates: `brew upgrade --cask inside-voice`.
 
-**Slow or blocked Wi-Fi?** The DMG is 3 MB; the speech engine is a separate
-669 MB download on first launch. If someone hands you the model file
+**Updating.** Download the DMG again and drag the new app over the old one
+(choose Replace), or `brew upgrade --cask inside-voice`. Your settings,
+permissions, and models carry over.
+
+**Older releases** and release notes live on the
+[Releases page](https://github.com/BillDX/InsideVoice/releases).
+
+**Slow or blocked Wi-Fi?** The DMG is 4 MB; the speech engine is a separate
+669 MB download in the Setup Assistant. If someone hands you the model file
 instead (`ggml-parakeet-tdt-0.6b-v3-q8_0.bin`, from
 [ggml-org/parakeet-GGUF](https://huggingface.co/ggml-org/parakeet-GGUF)),
 drop it in `~/Library/Application Support/Inside Voice/models/` before
@@ -51,34 +89,21 @@ Launch at Login needs re-enabling. The Setup Assistant opens to handle it.
 Coming from LocalWhisper, your models, word lists, and settings move over
 automatically; delete the old LocalWhisper.app afterwards.
 
-Requirements: Apple Silicon Mac, macOS 14 or later (built and tested on
-macOS 26; 14 and 15 are untested). RAM while running: ~0.8 GB with Parakeet,
-~1.7 GB with the optional Whisper engine.
+**Requirements in detail:** Apple Silicon Mac, macOS 14 or later (built and
+tested on macOS 26; 14 and 15 are untested). RAM while running: ~0.8 GB with
+Parakeet, ~1.7 GB with the optional Whisper engine.
 
-### Install
-
-Builds are signed with a Developer ID and notarized by Apple, so macOS
-opens them without warnings. Every release ships a `.sha256` next to the
-DMG if you want to verify the download:
+**Verify the download.** Builds are signed with a Developer ID and notarized
+by Apple. Every release also ships a `.sha256` next to the DMG:
 
 ```bash
 curl -L -O https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg.sha256
 shasum -a 256 -c InsideVoice.dmg.sha256
 ```
 
-To remove it later: drag the app to the Trash and delete
+**Uninstall.** Drag the app to the Trash and delete
 `~/Library/Application Support/Inside Voice` (the downloaded models and your
 word lists), or `brew uninstall --zap --cask inside-voice`.
-
-### First launch
-
-A Setup Assistant walks you through it: the engine download, the three macOS
-permissions (Microphone, Input Monitoring, Accessibility) with step-by-step
-guidance, start-at-login, and a keyboard check that confirms you're pressing
-the *right* Option key. The test field at the bottom unlocks when everything
-is green.
-
-![The Setup Assistant](docs/images/setup-assistant.png)
 
 ## What it does
 
