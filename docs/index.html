@@ -1,0 +1,441 @@
+<!doctype html>
+<!-- Public landing page, served by GitHub Pages from the public repo's docs/
+     folder. Lives in the private source repo at distribution/site/ and is
+     copied by scripts/publish-release.sh. Edit it there. Images under images/
+     come from docs/images. No analytics, no third-party requests: keep it so. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inside Voice — talk instead of type, on your Mac</title>
+<meta name="description" content="Free, private dictation for Mac. Hold one key, speak, let go: your words appear wherever you're typing. Nothing ever leaves your computer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://billdx.github.io/InsideVoice/">
+<meta property="og:title" content="Inside Voice — talk instead of type, on your Mac">
+<meta property="og:description" content="Free, private dictation for Mac. Hold one key, speak, let go. Nothing ever leaves your computer.">
+<meta property="og:image" content="https://billdx.github.io/InsideVoice/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --ink: #161b26;
+    --muted: #5a6273;
+    --line: #e2e5eb;
+    --accent: #1f9d55;
+    --accent-ink: #ffffff;
+    --accent-soft: #e6f6ec;
+    --brand: #1d2433;
+    --glow: #3ef08a;
+    --key: #eceef2;
+    --shadow: 0 1px 2px rgba(20, 25, 40, .06), 0 8px 24px rgba(20, 25, 40, .08);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11151d;
+      --surface: #1a202b;
+      --ink: #eef1f6;
+      --muted: #a2aab9;
+      --line: #2b3240;
+      --accent: #2fbf6a;
+      --accent-ink: #08130c;
+      --accent-soft: #16301f;
+      --key: #262d3a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  img, video { max-width: 100%; display: block; }
+  a { color: var(--accent); }
+  .wrap { max-width: 960px; margin-inline: auto; }
+  .narrow { max-width: 720px; margin-inline: auto; }
+
+  header.top {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-block: 18px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; }
+  .brand img { width: 36px; height: 36px; }
+  nav.top a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 15px; }
+  nav.top a:hover { color: var(--ink); }
+
+  .hero { text-align: center; padding-block: 40px 28px; }
+  .hero img.icon { width: 112px; height: 112px; margin: 0 auto 12px; }
+  h1 { font-size: clamp(38px, 7vw, 60px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 16px; }
+  .lede { font-size: clamp(18px, 2.4vw, 21px); color: var(--muted); max-width: 34em; margin: 0 auto 28px; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .download {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: var(--accent-ink);
+    font-size: 20px; font-weight: 700; text-decoration: none;
+    padding: 18px 34px; border-radius: 14px; box-shadow: var(--shadow);
+    transition: transform .08s ease, filter .15s ease;
+  }
+  .download:hover { filter: brightness(1.06); }
+  .download:active { transform: translateY(1px); }
+  .download svg { width: 24px; height: 24px; flex: none; }
+  .fine { color: var(--muted); font-size: 15px; margin: 14px 0 0; }
+
+  .notice {
+    max-width: 560px; margin: 22px auto 0; text-align: left;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; box-shadow: var(--shadow); font-size: 16px;
+  }
+  .notice p { margin: 0 0 10px; }
+  .notice p:last-child { margin-bottom: 0; }
+  .notice button {
+    font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--accent-soft); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px;
+  }
+
+  .video {
+    margin: 36px auto 0; border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow); border: 1px solid var(--line); background: #2b3a78;
+    aspect-ratio: 16 / 10;
+  }
+  .video video { width: 100%; height: 100%; object-fit: cover; }
+
+  .promises {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 40px 0 0;
+  }
+  .promise { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .promise h3 { margin: 0 0 6px; font-size: 18px; }
+  .promise p { margin: 0; color: var(--muted); font-size: 16px; }
+  .promise .mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); margin-bottom: 12px; }
+  .promise .mark svg { width: 20px; height: 20px; }
+
+  section { padding-block: 56px 0; }
+  h2 { font-size: clamp(28px, 4.4vw, 36px); letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 10px; text-align: center; }
+  .sub { text-align: center; color: var(--muted); margin: 0 auto 28px; max-width: 36em; }
+
+  ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+  ol.steps li {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px 22px 22px 76px; position: relative; min-width: 0;
+  }
+  @media (max-width: 480px) {
+    ol.steps li { padding: 70px 18px 20px; }
+    ol.steps li::before { left: 18px; top: 18px; }
+  }
+  ol.steps li::before {
+    counter-increment: step; content: counter(step);
+    position: absolute; left: 22px; top: 20px;
+    width: 38px; height: 38px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 19px;
+  }
+  ol.steps { counter-reset: step; }
+  ol.steps h3 { margin: 4px 0 6px; font-size: 20px; }
+  ol.steps p { margin: 0 0 10px; }
+  ol.steps p:last-child { margin-bottom: 0; }
+  ol.steps .shot { margin-top: 14px; border-radius: 10px; border: 1px solid var(--line); width: 100%; max-width: 460px; height: auto; background: #fff; padding: 10px; }
+
+  .keys { display: flex; gap: 6px; margin: 14px 0 8px; }
+  .k {
+    background: var(--key); border-radius: 8px; height: 46px; min-width: 46px;
+    display: grid; place-items: center; font-size: 17px; color: var(--muted);
+    padding-inline: 10px; flex: none; position: relative;
+  }
+  .k.space { flex: 1 1 auto; min-width: 0; }
+  @media (max-width: 480px) { .k { min-width: 34px; padding-inline: 6px; height: 40px; } .k.fn { display: none; } }
+  .k.hold { background: var(--accent); color: var(--accent-ink); font-weight: 700; box-shadow: 0 0 0 3px var(--accent-soft); }
+  .k.lock { outline: 2px dashed var(--accent); outline-offset: -2px; color: var(--ink); }
+  .k small { position: absolute; top: calc(100% + 4px); font-size: 12px; color: var(--muted); white-space: nowrap; font-weight: 400; }
+  .k.lock small { right: 0; }
+  .k.hold small { right: 0; }
+  .keys-wrap { padding-bottom: 22px; }
+
+  .perm { display: grid; gap: 12px; }
+  .perm div { display: grid; grid-template-columns: 170px 1fr; gap: 6px 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .perm div:first-child { border-top: 0; }
+  .perm dt { font-weight: 700; margin: 0; }
+  .perm dd { margin: 0; color: var(--muted); }
+  @media (max-width: 560px) { .perm div { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 8px 22px; }
+
+  .uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .use { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .use b { display: block; margin-bottom: 4px; }
+  .use span { color: var(--muted); font-size: 16px; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 16px 20px; font-weight: 600; list-style: none; position: relative; padding-right: 48px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--muted); font-weight: 400; }
+  details[open] summary::after { content: "–"; }
+  details > div { padding: 0 20px 16px; }
+  details p { margin: 0 0 10px; }
+  details p:last-child { margin-bottom: 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--key); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+
+  .again { text-align: center; padding-block: 64px 24px; }
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding-block: 28px 40px; color: var(--muted); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer nav a { margin-right: 18px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="favicon.png" alt="" width="36" height="36">Inside Voice</a>
+    <nav class="top">
+      <a href="#how">How it works</a>
+      <a href="#questions">Questions</a>
+      <a href="https://github.com/BillDX/InsideVoice/blob/main/USER-GUIDE.md">User Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <img class="icon" src="icon.png" alt="" width="112" height="112">
+      <h1>Talk instead of type.</h1>
+      <p class="lede">Hold one key on your Mac, say what you mean, and let go. Your words appear wherever you were typing. <strong>Free, private, and nothing you say ever leaves your computer.</strong></p>
+
+      <a class="download" id="download" href="https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download for Mac — free
+      </a>
+      <p class="fine">For Macs with Apple Silicon (M1 or newer), macOS 14 or later · <a href="#which-mac">Which Mac do I have?</a></p>
+
+      <div class="notice" id="started" hidden role="status">
+        <p><strong>Your download has started.</strong> Next, open <b>InsideVoice.dmg</b> from your Downloads folder and drag Inside Voice onto Applications. <a href="#how">The three steps are below.</a></p>
+      </div>
+
+      <div class="notice" id="not-mac" hidden>
+        <p><strong>Inside Voice runs on a Mac.</strong> It looks like you're on another device. Send yourself this page and open it on your Mac to download.</p>
+        <p><button type="button" id="share">Send this page to myself</button> <span id="copied" hidden>Link copied.</span></p>
+      </div>
+    </div>
+
+    <div class="video">
+      <video src="demo.mp4" poster="demo-poster.jpg" autoplay muted loop playsinline aria-label="Someone holds the right Option key and says a sentence; it appears in an email as typed text."></video>
+    </div>
+
+    <div class="promises">
+      <div class="promise">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Nothing leaves your Mac</h3>
+        <p>The speech engine runs on your own computer. It works exactly the same with the Wi-Fi off.</p>
+      </div>
+      <div class="promise">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Nothing is saved</h3>
+        <p>Your voice is never recorded to a file, and nothing you say is logged or kept.</p>
+      </div>
+      <div class="promise">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5 11 15l4.5-5"/></svg></div>
+        <h3>Free, no account</h3>
+        <p>No subscription, no sign-up, no ads. Free for everyone, at home or at work.</p>
+      </div>
+    </div>
+
+    <section id="how">
+      <h2>Get started in three steps</h2>
+      <p class="sub">About five minutes, most of it waiting for a download.</p>
+      <ol class="steps">
+        <li>
+          <h3>Download and install</h3>
+          <p>Click the green <b>Download</b> button. Open the file it saves, <b>InsideVoice.dmg</b>, from your Downloads folder. A small window opens: drag the Inside Voice icon onto the Applications folder beside it.</p>
+        </li>
+        <li>
+          <h3>Open it and follow the setup</h3>
+          <p>Open Inside Voice from your Applications folder. It's signed and checked by Apple, so it opens like any other app. A setup window walks you through the rest: a one-time download of the speech engine (669 MB, a few minutes on home Wi-Fi), then three permissions macOS asks you to approve. <a href="#permissions">What are those for?</a></p>
+          <img class="shot" src="images/setup-assistant.png" alt="The Inside Voice setup window, with a button next to each step" loading="lazy" width="460">
+        </li>
+        <li>
+          <h3>Hold the right Option key and talk</h3>
+          <p>Click wherever you want to type. Hold down the <b>Option ⌥ key to the right of the space bar</b>, speak, and let go. Your words appear a moment later.</p>
+          <div class="keys-wrap">
+            <div class="keys" aria-hidden="true">
+              <div class="k fn">fn</div><div class="k">⌃</div><div class="k">⌥</div><div class="k">⌘</div>
+              <div class="k space"></div>
+              <div class="k lock">⌘</div>
+              <div class="k hold">⌥<small>hold to talk</small></div>
+            </div>
+          </div>
+          <p><b>Saying a lot?</b> While holding the right Option key, tap the right Command ⌘ key next to it, then let go of both. It keeps listening hands-free until you tap the right Option key again.</p>
+          <p>After setup, Inside Voice has no window. It lives in the menu bar at the top right of your screen, as a small waveform circle. Click it for settings.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="permissions">
+      <div class="narrow">
+        <h2>Three permissions, in plain words</h2>
+        <p class="sub">They sound alarming. They're the same ones any dictation or keyboard-shortcut app needs, and Inside Voice never sends anything over the internet.</p>
+        <div class="card">
+          <dl class="perm">
+            <div><dt>Microphone</dt><dd>To hear you while you hold the key.</dd></div>
+            <div><dt>Input Monitoring</dt><dd>To notice when you hold the right Option key, even while you're working in another app.</dd></div>
+            <div><dt>Accessibility</dt><dd>To type your words into the app you're using.</dd></div>
+          </dl>
+        </div>
+        <p class="sub" style="margin-top:18px">The setup window opens the right page of System Settings for each one. Turn on the switch next to Inside Voice, then come back.</p>
+      </div>
+    </section>
+
+    <section id="uses">
+      <h2>What people use it for</h2>
+      <p class="sub">Anywhere you can click and type: mail, documents, chat apps, web pages, notes.</p>
+      <div class="uses">
+        <div class="use"><b>Emails and messages</b><span>Say the reply instead of typing it.</span></div>
+        <div class="use"><b>First drafts</b><span>Talk it out, then tidy it up. Long pauses while you think are fine.</span></div>
+        <div class="use"><b>Resting your hands</b><span>Less typing for sore wrists and tired fingers.</span></div>
+        <div class="use"><b>Thinking out loud</b><span>It drops the ums and ahs, so you can ramble freely.</span></div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="narrow">
+        <h2>Questions</h2>
+        <p class="sub">Not answered here? The <a href="https://github.com/BillDX/InsideVoice/blob/main/USER-GUIDE.md">User Guide</a> covers everything.</p>
+
+        <details id="which-mac">
+          <summary>Which Mac do I have? Will it work on mine?</summary>
+          <div>
+            <p>Inside Voice needs a Mac with Apple Silicon (M1, M2, M3, M4, or newer) on macOS 14 Sonoma or later.</p>
+            <p>To check: click the Apple menu at the top left of your screen, then <b>About This Mac</b>. If the "Chip" line says <b>Apple M</b>-something, you're set. If it says "Processor … Intel", Inside Voice won't run on that Mac, sorry.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is it really free?</summary>
+          <div>
+            <p>Yes, for everyone, including at work and on as many Macs as you like. No trial, no account, no ads. It's a personal project by <a href="https://github.com/BillDX">Bill McIntyre</a>, built to show that useful AI can run entirely on your own computer.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is it safe to install?</summary>
+          <div>
+            <p>The app is signed by its developer and checked by Apple for malicious software before every release (Apple calls this notarization). That's why it opens without warnings.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do I need the internet?</summary>
+          <div>
+            <p>Only once, to download the speech engine during setup. After that it never uses the internet. Try it with the Wi-Fi off.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What languages does it understand?</summary>
+          <div>
+            <p>English and 24 other European languages out of the box. An optional second engine, offered in the setup window, adds 99 languages including Japanese, Chinese, Korean, and Hindi.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Does it get names and special words right?</summary>
+          <div>
+            <p>Add names, jargon, and product names to a personal word list from the menu bar icon, and they come out right. The <a href="https://github.com/BillDX/InsideVoice/blob/main/USER-GUIDE.md">User Guide</a> explains how.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>The download link took me to GitHub. What is that?</summary>
+          <div>
+            <p>GitHub is a website where software is built and shared. Inside Voice's downloads and documentation live there. You don't need an account or any technical know-how; the Download button on this page is all you need.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I update it?</summary>
+          <div>
+            <p>Download it again from this page and drag the new app onto the old one in Applications (choose <b>Replace</b>). Your settings carry over.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I remove it?</summary>
+          <div>
+            <p>Drag Inside Voice from Applications to the Trash. To also delete the downloaded speech engine and free the space, open Finder, choose <b>Go → Go to Folder…</b>, paste <code>~/Library/Application Support/Inside Voice</code>, and delete that folder.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Something isn't working. Where do I get help?</summary>
+          <div>
+            <p>The <a href="https://github.com/BillDX/InsideVoice/blob/main/USER-GUIDE.md#troubleshooting">troubleshooting guide</a> covers the common problems in plain language. To ask a question or report a problem, <a href="https://github.com/BillDX/InsideVoice/issues">open an issue on GitHub</a> (it needs a free account).</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div class="again">
+      <h2>Give it a try</h2>
+      <p class="sub">Free, private, and five minutes from now you could be talking to your Mac.</p>
+      <a class="download" href="https://github.com/BillDX/InsideVoice/releases/latest/download/InsideVoice.dmg" data-download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Download for Mac — free
+      </a>
+      <p class="fine">Apple Silicon Mac · macOS 14 or later · 4 MB, plus a one-time 669 MB speech engine</p>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="https://github.com/BillDX/InsideVoice/blob/main/USER-GUIDE.md">User Guide</a>
+      <a href="https://github.com/BillDX/InsideVoice/releases">Release notes</a>
+      <a href="https://github.com/BillDX/InsideVoice#for-teams">For teams</a>
+      <a href="https://github.com/BillDX/InsideVoice">For developers</a>
+    </nav>
+    <span>Made by <a href="https://github.com/BillDX">Bill McIntyre</a>. This page uses no cookies and no tracking.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var ua = navigator.userAgent || "";
+    var touchMac = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;  // iPad in desktop mode
+    var isMac = /Macintosh|Mac OS X/.test(ua) && !/iPhone|iPad|iPod/.test(ua) && !touchMac;
+    var notMac = document.getElementById("not-mac");
+    if (!isMac) notMac.hidden = false;
+
+    var share = document.getElementById("share");
+    share.addEventListener("click", function () {
+      var url = location.href.split("#")[0];
+      if (navigator.share) {
+        navigator.share({ title: "Inside Voice", text: "Free, private dictation for Mac", url: url }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          document.getElementById("copied").hidden = false;
+        });
+      }
+    });
+
+    var started = document.getElementById("started");
+    document.querySelectorAll("#download, [data-download]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        if (!isMac) return;
+        started.hidden = false;
+        if (a !== document.getElementById("download")) started.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
